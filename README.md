@@ -3,7 +3,7 @@ SPOJ Solutions
 
 * [AMR11A.cpp](https://github.com/omerjerk/spoj/blob/master/AMR11A.cpp) : Dynamic Programming - bottom up approach
 * [arraysub.cpp](https://github.com/omerjerk/spoj/blob/master/arraysub.cpp) : Segment Trees
-* [amr11f_priority_queue.cpp](https://github.com/omerjerk/spoj/blob/master/amr11f.cpp) : Dijkstra + Adjecency List + Priority Queue (TLE)
+* [amr11f_dijkstra.cpp](https://github.com/omerjerk/spoj/blob/master/amr11f_dijkstra.cpp) : Dijkstra + Adjecency List + Priority Queue (TLE)
 * [brckts.cpp](https://github.com/omerjerk/spoj/blob/master/brckts.cpp) : Segment Trees
 * [bridge.cpp](https://github.com/omerjerk/spoj/blob/master/bridge.cpp) : Longest Increasing Subsequence
 * [candle.cpp](https://github.com/omerjerk/spoj/blob/master/candle.cpp) : Naive Approach
