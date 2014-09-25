@@ -92,19 +92,18 @@ int main() {
             scan(&tx); scan(&fx); scan(&ty); scan(&fy); scan(&w);
             int r,s;
             if (!ma[mp(tx-1, fx-1)]) {
-              if (ty-1 != 0 && fy-1 != 0) {
+              if (!(ty-1 == 0 && fy-1 == 0)) {
                 ma[mp(tx-1, fx-1)] = ++count;
                 r = count;
                 ref[tx-1].push_back(fx-1);
-            } else {
-              r=0;
-            }
-              
+              } else {
+                r=0;
+              }
             } else
                 r = ma[mp(tx-1, fx-1)];
 
             if (!ma[mp(ty-1, fy-1)]) {
-              if (ty-1 != 0 && fy-1 != 0) {
+              if (!(ty-1 == 0 && fy-1 == 0)) {
                 ma[mp(ty-1, fy-1)] = ++count;
                 s = count;
                 ref[ty-1].push_back(fy-1);
@@ -116,26 +115,18 @@ int main() {
               s = ma[mp(ty-1, fy-1)];
             }
             
-            //addEdge(tx-1, fx-1, ty-1, fy-1, w);
             //cout<<"r = "<<r<<" s = "<<s<<" graph = "<<graph[r][s]<<endl;
-            graph[r][s] = min(graph[r][s], w);
-            graph[s][r] = graph[r][s];
-            //graph[ma[mp(tx-1, fx-1)]][ma[mp(ty-1, fy-1)]] = graph[ma[mp(ty-1, fy-1)]][ma[mp(tx-1, fx-1)]] = 
-              //  min(graph[ma[mp(tx-1, fx-1)]][ma[mp(ty-1, fy-1)]], w);
-            
-            
-            //addEdge(tx-1, fx-1, tx-1, 0, fx-1);
-            //addEdge(ty-1, fy-1, ty-1, 0, fy-1);
+            graph[s][r] = graph[r][s] = min(graph[r][s], w);
+            //cout<<"r = "<<r<<" s = "<<s<<" graph = "<<graph[r][s]<<endl;
         }
         for (int i = 0; i < N; ++i) {
           sort(ref[i].begin(), ref[i].end());
         }
         for (int i = 0; i < N; ++i) {
           for (int j = 0; j < ref[i].size()-1; ++j) {
-            //addEdge(i, ref[i][j], i, ref[i][j+1], ref[i][j+1] - ref[i][j]);
             graph[ma[mp(i, ref[i][j])]][ma[mp(i, ref[i][j+1])]] =
               graph[ma[mp(i, ref[i][j+1])]][ma[mp(i, ref[i][j])]] =
-               ref[i][j+1] - ref[i][j];
+               min(ref[i][j+1] - ref[i][j], graph[ma[mp(i, ref[i][j+1])]][ma[mp(i, ref[i][j])]]);
             //cout<<"( "<<i<<" , "<<ref[i][j]<<" ) --- ( "<<i<<" , "<<ref[i][j+1]<<" )"<<endl;
           }
         }
@@ -171,30 +162,22 @@ int main() {
             int qtx, qfx, qty, qfy;
             scan(&qtx); scan(&qfx); scan(&qty); scan(&qfy);
             --qtx; --qfx; --qty; -- qfy;
-            //cout<<"check 3"<<endl;
-            //dijkstra(node(((qtx-1)*F)+(qfx-1), 0), ((qty-1) *F)+ (qfy-1), V, adj);
-            if (qtx == qty) {
-              print(abs(qfx-qfy));
-              continue;
-            }
-
+            
             int nearestStartFloorUp = lower_bound(ref[qtx].begin(), ref[qtx].end(), qfx) - ref[qtx].begin();
             int nearestStartFloorDn = nearestStartFloorUp - 1;
             nearestStartFloorUp = ref[qtx][nearestStartFloorUp];
             if (nearestStartFloorDn >= 0)
               nearestStartFloorDn = ref[qtx][nearestStartFloorDn];
-
-            if (nearestStartFloorUp == qfx)
-              nearestStartFloorDn = -1;
+            else
+              nearestStartFloorDn = 0;
 
             int nearestFinalFloorUp = lower_bound(ref[qty].begin(), ref[qty].end(), qfy) - ref[qty].begin();
             int nearestFinalFloorDn = nearestFinalFloorUp-1;
             nearestFinalFloorUp = ref[qty][nearestFinalFloorUp];
             if (nearestFinalFloorDn >= 0)
               nearestFinalFloorDn = ref[qty][nearestFinalFloorDn];
-
-            if (nearestFinalFloorUp == qfy)
-              nearestFinalFloorDn = -1;
+            else
+              nearestFinalFloorDn = 0;
 
             int startDiffUp = abs(qfx-nearestStartFloorUp);
             int startDiffDn = abs(qfx-nearestStartFloorDn);
@@ -204,31 +187,19 @@ int main() {
             int finalDiffDn = abs(qfy-nearestFinalFloorDn); 
             //cout<<"Nearest Floor Down = "<<nearestFinalFloorDn<<" Nearest Floor Up = "<<nearestFinalFloorUp<<endl;
 
-            int ans1 = //dijkstra(node(qtx, nearestStartFloorUp, 0), node(qty, nearestFinalFloorUp, 0), V);
-                graph[ma[mp(qtx, nearestStartFloorUp)]][ma[mp(qty, nearestFinalFloorUp)]];
-            int ans2 = nearestFinalFloorDn == -1 || nearestStartFloorDn == -1 ? -1 :
-                //dijkstra(node(qtx, nearestStartFloorDn, 0), node(qty, nearestFinalFloorDn, 0), V);
-                graph[ma[mp(qtx, nearestStartFloorDn)]][ma[mp(qty, nearestFinalFloorDn)]];
-            int ans3 = nearestStartFloorDn == -1 ? -1 :
-                //dijkstra(node(qtx, nearestStartFloorDn, 0), node(qty, nearestFinalFloorUp, 0), V);
-                graph[ma[mp(qtx, nearestStartFloorDn)]][ma[mp(qty, nearestFinalFloorUp)]];
-            int ans4 = nearestFinalFloorDn == -1 ? -1 :
-                //dijkstra(node(qtx, nearestStartFloorUp, 0), node(qty, nearestFinalFloorDn, 0), V);
-                graph[ma[mp(qtx, nearestStartFloorUp)]][ma[mp(qty, nearestFinalFloorDn)]];
+            int ans1 = graph[ma[mp(qtx, nearestStartFloorUp)]][ma[mp(qty, nearestFinalFloorUp)]];
+            int ans2 = graph[ma[mp(qtx, nearestStartFloorDn)]][ma[mp(qty, nearestFinalFloorDn)]];
+            int ans3 = graph[ma[mp(qtx, nearestStartFloorDn)]][ma[mp(qty, nearestFinalFloorUp)]];
+            int ans4 = graph[ma[mp(qtx, nearestStartFloorUp)]][ma[mp(qty, nearestFinalFloorDn)]];
             //cout<<"ans1 = "<<ans1<<endl<<"ans2 = "<<ans2<<endl<<"ans3 = "<<ans3<<endl<<"ans4 = "<<ans4<<endl;
             ans1 += startDiffUp + finalDiffUp;
-            if (ans2 != -1) {
-              ans1 = min(ans1, ans2 + startDiffDn + finalDiffDn);
-            }
-            if (ans3 != -1) {
-              ans1 = min(ans1, ans3 + startDiffDn + finalDiffUp);
-            }
-            if (ans4 != -1) {
-              ans1 = min(ans1, ans4 + startDiffUp + finalDiffDn);
+            ans1 = min(ans1, ans2 + startDiffDn + finalDiffDn);
+            ans1 = min(ans1, ans3 + startDiffDn + finalDiffUp);
+            ans1 = min(ans1, ans4 + startDiffUp + finalDiffDn);
+            if (qtx == qty) {
+              ans1 = min(ans1, abs(qfy - qfx));
             }
             print(ans1);
-            //cout<<ans1;
-            //dijkstra(node(qtx-1, qfx-1, 0), node(qty-1, qfy-1, 0), V);
         }
     }
 
