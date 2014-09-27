@@ -16,3 +16,4 @@ SPOJ Solutions
 * [kgss.cpp](https://github.com/omerjerk/spoj/blob/master/kgss.cpp) : Segment Trees
 * [shpath.cpp](https://github.com/omerjerk/spoj/blob/master/shpath.cpp) : Dijkstra + Min Heap + Adjecency List
 * [sumtrian.cpp](https://github.com/omerjerk/spoj/blob/master/sumtrian.cpp) : Dynamic Programming - bottom up approach
+* [blinnet.cpp](https://github.com/omerjerk/spoj/blob/master/blinnet.cpp) : Minimum Spanning Tree
