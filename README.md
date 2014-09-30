@@ -17,3 +17,5 @@ SPOJ Solutions
 * [shpath.cpp](https://github.com/omerjerk/spoj/blob/master/shpath.cpp) : Dijkstra + Min Heap + Adjecency List
 * [sumtrian.cpp](https://github.com/omerjerk/spoj/blob/master/sumtrian.cpp) : Dynamic Programming - bottom up approach
 * [blinnet.cpp](https://github.com/omerjerk/spoj/blob/master/blinnet.cpp) : Minimum Spanning Tree
+* [iitk1P10.cpp](https://github.com/omerjerk/spoj/blob/master/iitk1P10.cpp) : Breadth First Search
+* [DCEPC701.cpp](https://github.com/omerjerk/spoj/blob/master/DCEPC701.cpp) : Dikjstra
