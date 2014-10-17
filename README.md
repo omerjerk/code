@@ -19,3 +19,4 @@ SPOJ Solutions
 * [blinnet.cpp](https://github.com/omerjerk/spoj/blob/master/blinnet.cpp) : Minimum Spanning Tree
 * [iitk1P10.cpp](https://github.com/omerjerk/spoj/blob/master/iitk1P10.cpp) : Breadth First Search
 * [DCEPC701.cpp](https://github.com/omerjerk/spoj/blob/master/DCEPC701.cpp) : Dikjstra
+* [SEATSR.cpp](https://github.com/omerjerk/spoj/blob/master/SEATSR.cpp) : Levenshtein distance (Edit Distance) with further optimization based on the problem
