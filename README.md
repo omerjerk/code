@@ -20,3 +20,4 @@ Algorithms used
 * [iitk1P10.cpp](https://github.com/omerjerk/spoj/blob/master/iitk1P10.cpp) : Breadth First Search
 * [DCEPC701.cpp](https://github.com/omerjerk/spoj/blob/master/DCEPC701.cpp) : Dikjstra
 * [SEATSR.cpp](https://github.com/omerjerk/spoj/blob/master/SEATSR.cpp) : Levenshtein distance (edit distance) with further optimization according to the problem
+* [HORRIBLE.cpp](https://github.com/omerjerk/spoj/blob/master/HORRIBLE.cpp) : Segment Tress with Lazy Propagation
