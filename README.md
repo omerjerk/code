@@ -22,3 +22,4 @@ Algorithms used
 * [SEATSR.cpp](https://github.com/omerjerk/spoj/blob/master/SEATSR.cpp) : Levenshtein distance (edit distance) with further optimization according to the problem
 * [HORRIBLE.cpp](https://github.com/omerjerk/spoj/blob/master/HORRIBLE.cpp) : Segment Tress with Lazy Propagation
 * [LITE.cpp](https://github.com/omerjerk/spoj/blob/master/LITE.cpp) : Segment Tress with Lazy Propagation
+* [DQUERY.cpp](https://github.com/omerjerk/spoj/blob/master/DQUERY.cpp) : Offline Algorithm in Segment Trees
