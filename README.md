@@ -23,3 +23,4 @@ Algorithms used
 * [HORRIBLE.cpp](https://github.com/omerjerk/spoj/blob/master/HORRIBLE.cpp) : Segment Tress with Lazy Propagation
 * [LITE.cpp](https://github.com/omerjerk/spoj/blob/master/LITE.cpp) : Segment Tress with Lazy Propagation
 * [DQUERY.cpp](https://github.com/omerjerk/spoj/blob/master/DQUERY.cpp) : Offline Algorithm in Segment Trees
+* [the-quickest-way-up.cpp](https://github.com/omerjerk/spoj/blob/master/the-quickest-way-up.cpp) : Dijkstra
