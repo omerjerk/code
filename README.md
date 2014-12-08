@@ -24,3 +24,4 @@ Algorithms used
 * [LITE.cpp](https://github.com/omerjerk/spoj/blob/master/LITE.cpp) : Segment Tress with Lazy Propagation
 * [DQUERY.cpp](https://github.com/omerjerk/spoj/blob/master/DQUERY.cpp) : Offline Algorithm in Segment Trees
 * [the-quickest-way-up.cpp](https://github.com/omerjerk/spoj/blob/master/the-quickest-way-up.cpp) : Dijkstra
+* [FNCS.cpp](https://github.com/omerjerk/spoj/blob/master/FNCS.cpp) : Segment Tree + Square root decomposition
