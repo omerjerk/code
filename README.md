@@ -25,3 +25,5 @@ Algorithms used
 * [DQUERY.cpp](https://github.com/omerjerk/spoj/blob/master/DQUERY.cpp) : Offline Algorithm in Segment Trees
 * [the-quickest-way-up.cpp](https://github.com/omerjerk/spoj/blob/master/the-quickest-way-up.cpp) : Dijkstra
 * [FNCS.cpp](https://github.com/omerjerk/spoj/blob/master/FNCS.cpp) : Segment Tree + Square root decomposition
+* [XMAX.cpp](https://github.com/omerjerk/spoj/blob/master/XMAX.cpp) : Guassian forward elimination
+* [red-john-is-back.cpp](https://github.com/omerjerk/spoj/blob/master/red-john-is-back.cpp) : Dynamic Programming + Probability
